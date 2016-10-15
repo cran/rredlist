@@ -1,4 +1,4 @@
-#' Get species narrative information by taxon name or IUCN id
+#' Get common names for a given taxonomic name
 #'
 #' @export
 #' @param name (character) Binomial taxonomic name
@@ -15,5 +15,5 @@ rl_common_names <- function(name = NULL, key = NULL, parse = TRUE, ...) {
 #' @export
 #' @rdname rl_common_names
 rl_common_names_ <- function(name = NULL, key = NULL, ...) {
-  rr_GET(file.path("species/common_names", name), key, ...)
+  rr_GET(file.path("species/common_names", space(name)), key, ...)
 }

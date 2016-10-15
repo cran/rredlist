@@ -9,7 +9,7 @@ rr_GET <- function(path, key, ...){
 }
 
 err_catcher <- function(x) {
-  xx <- content(x)
+  xx <- jsonlite::fromJSON(content(x, as = 'text', encoding = "UTF-8"))
   if (any(vapply(c("message", "error"), function(z) z %in% names(xx), logical(1)))) {
     stop(xx[[1]], call. = FALSE)
   }
@@ -22,10 +22,12 @@ rl_parse <- function(x, parse) {
 check_key <- function(x){
   tmp <- if (is.null(x)) Sys.getenv("IUCN_REDLIST_KEY", "") else x
   if (tmp == "") {
-    getOption("iucn_redlist_key", stop("need an API key for NOAA data", call. = FALSE))
+    getOption("iucn_redlist_key", stop("need an API key for Red List data", call. = FALSE))
   } else {
     tmp
   }
 }
 
 rr_base <- function() "http://apiv3.iucnredlist.org/api/v3"
+
+space <- function(x) gsub("\\s", "%20", x)
