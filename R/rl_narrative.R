@@ -13,25 +13,17 @@
 #' rl_narrative_('Fratercula arctica')
 #' rl_narrative_('Fratercula arctica', region = 'europe')
 #' }
-rl_narrative <- function(name = NULL, id = NULL, region = NULL, key = NULL, parse = TRUE, ...) {
+rl_narrative <- function(name = NULL, id = NULL, region = NULL,
+                         key = NULL, parse = TRUE, ...) {
+  assert_is(parse, 'logical')
   rl_parse(rl_narrative_(name, id, region, key, ...), parse)
 }
 
 #' @export
 #' @rdname rl_narrative
-rl_narrative_ <- function(name = NULL, id = NULL, region = NULL, key = NULL, ...) {
-  rr_GET(.narrative(name, id, region), key, ...)
-}
-
-.narrative <- function(name = NULL, id = NULL, region = NULL) {
-  stopifnot(xor(!is.null(name), !is.null(id)))
-  path <- if (!is.null(name)) {
-    file.path("species/narrative", space(name))
-  } else {
-    file.path("species/narrative/id", id)
-  }
-  if (!is.null(region)) {
-    path <- file.path(path, "region", space(region))
-  }
-  path
+rl_narrative_ <- function(name = NULL, id = NULL, region = NULL,
+                          key = NULL, ...) {
+  assert_is(key, 'character')
+  rr_GET(nir("species/narrative", "species/narrative/id",
+             name, id, region), key, ...)
 }

@@ -14,25 +14,17 @@
 #' rl_search_('Fratercula arctica')
 #' rl_search_('Fratercula arctica', region = 'europe')
 #' }
-rl_search <- function(name = NULL, id = NULL, region = NULL, key = NULL, parse = TRUE, ...) {
+rl_search <- function(name = NULL, id = NULL, region = NULL,
+                      key = NULL, parse = TRUE, ...) {
+  assert_is(parse, 'logical')
   rl_parse(rl_search_(name, id, region, key, ...), parse)
 }
 
 #' @export
 #' @rdname rl_search
-rl_search_ <- function(name = NULL, id = NULL, region = NULL, key = NULL, ...) {
-  rr_GET(.search(name, id, region), key, ...)
-}
-
-.search <- function(name = NULL, id = NULL, region = NULL) {
-  stopifnot(xor(!is.null(name), !is.null(id)))
-  path <- if (!is.null(name)) {
-    file.path("species", space(name))
-  } else {
-    file.path("species/id", id)
-  }
-  if (!is.null(region)) {
-    path <- file.path(path, "region", space(region))
-  }
-  path
+rl_search_ <- function(name = NULL, id = NULL, region = NULL,
+                       key = NULL, ...) {
+  assert_is(key, 'character')
+  rr_GET(nir("species", "species/id",
+             name, id, region), key, ...)
 }

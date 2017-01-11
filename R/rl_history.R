@@ -13,25 +13,17 @@
 #' rl_history_('Loxodonta africana')
 #' rl_history_(id = 12392)
 #' }
-rl_history <- function(name = NULL, id = NULL, region = NULL, key = NULL, parse = TRUE, ...) {
+rl_history <- function(name = NULL, id = NULL, region = NULL,
+                       key = NULL, parse = TRUE, ...) {
+  assert_is(parse, 'logical')
   rl_parse(rl_history_(name, id, region, key, ...), parse)
 }
 
 #' @export
 #' @rdname rl_habitats
-rl_history_ <- function(name = NULL, id = NULL, region = NULL, key = NULL, ...) {
-  rr_GET(.history(name, id, region), key, ...)
-}
-
-.history <- function(name = NULL, id = NULL, region = NULL) {
-  stopifnot(xor(!is.null(name), !is.null(id)))
-  path <- if (!is.null(name)) {
-    file.path("species/history/name", space(name))
-  } else {
-    file.path("species/history/id", id)
-  }
-  if (!is.null(region)) {
-    path <- file.path(path, "region", space(region))
-  }
-  path
+rl_history_ <- function(name = NULL, id = NULL, region = NULL,
+                        key = NULL, ...) {
+  assert_is(key, 'character')
+  rr_GET(nir("species/history/name", "species/history/id",
+             name, id, region), key, ...)
 }

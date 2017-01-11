@@ -4,12 +4,10 @@
 \alias{rl_citation}
 \title{Get the citation Red List API version}
 \usage{
-rl_citation(key = NULL, ...)
+rl_citation(...)
 }
 \arguments{
-\item{key}{A IUCN API token}
-
-\item{...}{Curl options passed to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \value{
 API citation as character string

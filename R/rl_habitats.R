@@ -13,25 +13,17 @@
 #' rl_habitats_('Fratercula arctica')
 #' rl_habitats_(id = 12392)
 #' }
-rl_habitats <- function(name = NULL, id = NULL, region = NULL, key = NULL, parse = TRUE, ...) {
+rl_habitats <- function(name = NULL, id = NULL, region = NULL, key = NULL,
+                        parse = TRUE, ...) {
+  assert_is(parse, 'logical')
   rl_parse(rl_habitats_(name, id, region, key, ...), parse)
 }
 
 #' @export
 #' @rdname rl_habitats
-rl_habitats_ <- function(name = NULL, id = NULL, region = NULL, key = NULL, ...) {
-  rr_GET(.habitats(name, id, region), key, ...)
-}
-
-.habitats <- function(name = NULL, id = NULL, region = NULL) {
-  stopifnot(xor(!is.null(name), !is.null(id)))
-  path <- if (!is.null(name)) {
-    file.path("habitats/species/name", space(name))
-  } else {
-    file.path("habitats/species/id", id)
-  }
-  if (!is.null(region)) {
-    path <- file.path(path, "region", space(region))
-  }
-  path
+rl_habitats_ <- function(name = NULL, id = NULL, region = NULL,
+                         key = NULL, ...) {
+  assert_is(key, 'character')
+  rr_GET(nir("habitats/species/name", "habitats/species/id",
+         name, id, region), key, ...)
 }

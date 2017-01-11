@@ -22,7 +22,7 @@ rl_threats_(name = NULL, id = NULL, region = NULL, key = NULL, ...)
 \item{parse}{(logical) Whether to parse to list (\code{FALSE}) or
 data.frame (\code{TRUE}). Default: \code{TRUE}}
 
-\item{...}{Curl options passed to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \value{
 A list, with the data in the \code{result} slot, unless using
@@ -39,6 +39,8 @@ rl_threats('Fratercula arctica', region = 'europe')
 rl_threats(id = 12392)
 rl_threats(id = 22694927, region = 'europe')
 rl_threats_('Fratercula arctica')
+
+rl_threats(id = 62290750)
 }
 }
 \references{
