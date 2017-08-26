@@ -14,13 +14,16 @@ rl_habitats_(name = NULL, id = NULL, region = NULL, key = NULL, ...)
 rl_history_(name = NULL, id = NULL, region = NULL, key = NULL, ...)
 }
 \arguments{
-\item{name}{(character) Binomial taxonomic name}
+\item{name}{(character) A taxonomic name}
 
-\item{id}{(character) IUCN id}
+\item{id}{(character) An IUCN identifier}
 
-\item{region}{(character) Binomial taxonomic name}
+\item{region}{(character) A region name, see \code{\link{rl_regions}} for
+acceptable region identifiers (use the entries in the \code{identifier}
+column)}
 
-\item{key}{A IUCN API token}
+\item{key}{A IUCN API token. See
+\url{http://apiv3.iucnredlist.org/api/v3/token} to get a token}
 
 \item{parse}{(logical) Whether to parse to list (\code{FALSE}) or
 data.frame (\code{TRUE}). Default: \code{TRUE}}
@@ -49,4 +52,3 @@ rl_habitats_(id = 12392)
 \references{
 API docs at \url{http://apiv3.iucnredlist.org/api/v3/docs}
 }
-

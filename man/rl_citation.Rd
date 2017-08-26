@@ -7,7 +7,7 @@
 rl_citation(...)
 }
 \arguments{
-\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
+\item{...}{Curl options passed to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \value{
 API citation as character string
@@ -20,4 +20,3 @@ Get the citation Red List API version
 rl_citation()
 }
 }
-

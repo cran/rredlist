@@ -7,7 +7,7 @@
 rl_version(...)
 }
 \arguments{
-\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
+\item{...}{Curl options passed to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \value{
 API version as character string
@@ -20,4 +20,3 @@ Get the Red List API version
 rl_version()
 }
 }
-
