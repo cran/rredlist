@@ -8,7 +8,7 @@
 #'
 #' @section Authentication:
 #' IUCN requires you to get your own API key, an alphanumeric string that you
-#' need to send in every request. See key A IUCN API token. See \code{\link{rl_use_iucn}}
+#' need to send in every request. See key A IUCN API token. See [rl_use_iucn()]
 #' for help getting and storing it. Get it at
 #' <http://apiv3.iucnredlist.org/api/v3/token>
 #' Keep this key private. You can pass the key in to each function via the
@@ -44,6 +44,11 @@
 #' Red List Unit asked that you contact them, as there might be better options.
 #' They suggest a 2-second delay between your calls if you plan to make a
 #' lot of calls.
+#' 
+#' @section Data Discrepancy:
+#' There can sometimes be a discrepancy between what you get on the IUCN
+#' website and what you get with this package; we don't know why, the IUCN
+#' API is not an open book.
 #'
 #' @section Citing the IUCN Red List API:
 #' See <http://apiv3.iucnredlist.org/about>

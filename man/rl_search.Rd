@@ -8,8 +8,7 @@
 \usage{
 rl_occ_country_(name = NULL, id = NULL, region = NULL, key = NULL, ...)
 
-rl_search(name = NULL, id = NULL, region = NULL, key = NULL,
-  parse = TRUE, ...)
+rl_search(name = NULL, id = NULL, region = NULL, key = NULL, parse = TRUE, ...)
 
 rl_search_(name = NULL, id = NULL, region = NULL, key = NULL, ...)
 }
