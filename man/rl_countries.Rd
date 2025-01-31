@@ -3,34 +3,95 @@
 \name{rl_countries}
 \alias{rl_countries}
 \alias{rl_countries_}
-\title{Get countries}
+\title{Country assessment summary}
 \usage{
-rl_countries(key = NULL, parse = TRUE, ...)
+rl_countries(
+  code = NULL,
+  key = NULL,
+  parse = TRUE,
+  all = TRUE,
+  page = 1,
+  quiet = FALSE,
+  ...
+)
 
-rl_countries_(key = NULL, ...)
+rl_countries_(
+  code = NULL,
+  key = NULL,
+  all = TRUE,
+  page = 1,
+  quiet = FALSE,
+  ...
+)
 }
 \arguments{
-\item{key}{A IUCN API token. See \code{\link{rl_use_iucn}}.}
+\item{code}{(character) The ISO alpha-2 code of the country to look up. If
+not supplied, a list of all countries will be returned.}
 
-\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or
-data.frame (\code{TRUE}). Default: \code{TRUE}}
+\item{key}{(character) An IUCN API token. See \code{\link[=rl_use_iucn]{rl_use_iucn()}}.}
 
-\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
+\item{parse}{(logical) Whether to parse the output to list (\code{FALSE}) or,
+where possible, data.frame (\code{TRUE}). Default: \code{TRUE}.}
+
+\item{all}{(logical) Whether to retrieve all results at once or not. If
+\code{TRUE} we do the paging internally for you and bind all of the results
+together. If \code{FALSE}, only a single page of results will be retrieved.}
+
+\item{page}{(integer/numeric) Page to get if \code{all} is \code{FALSE}. Default: 1.
+Each page returns up to 100 records. Paging is required because it's too
+much burden on a server to just "get all the data" in one request.}
+
+\item{quiet}{(logical) Whether to suppress progress for multi-page downloads
+or not. Default: \code{FALSE} (that is, give progress). Ignored if \code{all = FALSE}.}
+
+\item{...}{Includes the following filters that are supported by the API
+endpoint (refer to the \href{https://api.iucnredlist.org/api-docs/index.html}{API docs} for more
+information):
+\itemize{
+\item \code{year_published}: (integer) Set this to return only
+assessments from a given year.
+\item \code{latest}: (logical) Set this to \code{TRUE} to return only the
+latest assessment for each taxon.
+\item \code{scope_code}: (integer) Set this to return only assessments
+from a particular \link[=rl_scopes]{scope} (e.g., \code{1} for Global, \code{2} for
+Europe). This is similar to the \code{region} argument of the old Red List
+API and old versions of rredlist.
+}
+Also includes the following arguments related to the wait time between
+request retries if a "Too Many Requests" error is received from the API
+(see \link[crul:HttpClient]{HttpClient()$retry()} for more details):
+\itemize{
+\item \code{pause_base}, \code{pause_cap}, and \code{pause_min}: basis, maximum, and minimum
+for calculating wait time for retry
+\item \code{times}: the maximum number of times to retry
+\item \code{onwait}: a callback function if the request will be retried and a
+wait time is being applied
+}
+Also supports any \link[curl:curl_options]{curl options} passed to the GET
+request via \link[crul:HttpClient]{HttpClient}.}
 }
 \value{
-A list, with the data in the \code{result} slot, unless using
-a function with a trailing underscore, in which case json as character
-string is returned.
+A list unless using a function with a trailing underscore, in which
+case json as character string is returned.
 }
 \description{
-Get countries
+Returns a collection of assessments for a given country code.
 }
 \examples{
 \dontrun{
+# Get list of all countries
 rl_countries()
-rl_countries_()
+# Get assessments for Madagascar
+rl_countries("MG")
 }
 }
 \references{
-API docs at https://apiv3.iucnredlist.org/api/v3/docs
+API docs at \url{https://api.iucnredlist.org/}.
 }
+\seealso{
+Assessments by geographic regions:
+\code{\link{rl_faos}()},
+\code{\link{rl_realms}()},
+\code{\link{rl_scopes}()}
+}
+\concept{geo}

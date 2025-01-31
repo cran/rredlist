@@ -4,28 +4,21 @@
 \name{rredlist-package}
 \alias{rredlist-package}
 \alias{rredlist}
-\title{rredlist}
+\title{rredlist: 'IUCN' Red List Client}
 \description{
-IUCN Red List R Client
-}
-\section{Taxonomic Names vs. IUCN IDs}{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-From the documentation (quoting): "It is advisable wherever possible to use
-the taxon name (species name) to make your API calls, rather than using IDs.
-IDs are not immovable are expected to be used mainly by organizations
-that work closely with the IUCN Red List."
+'IUCN' Red List (\url{https://api.iucnredlist.org/}) client. The 'IUCN' Red List is a global list of threatened and endangered species. Functions cover all of the Red List 'API' routes. An 'API' key is required.
 }
-
 \section{Authentication}{
 
 IUCN requires you to get your own API key, an alphanumeric string that you
-need to send in every request. See key A IUCN API token. See \code{\link[=rl_use_iucn]{rl_use_iucn()}}
-for help getting and storing it. Get it at
-https://apiv3.iucnredlist.org/api/v3/token
-Keep this key private. You can pass the key in to each function via the
-\code{key} parameter, but it's better to store the key either as a
-environment variable (\code{IUCN_REDLIST_KEY}) or an R option
-(\code{iucn_redlist_key}) - we recommend using the former option.
+need to send in every request. See \code{\link[=rl_use_iucn]{rl_use_iucn()}} for help getting and
+storing it. Get it at \url{https://api.iucnredlist.org/users/sign_up}. Keep this
+key private. You can pass the key in to each function via the \code{key}
+parameter, but it's better to store the key either as an environment variable
+(\code{IUCN_REDLIST_KEY}) or an R option (\code{iucn_redlist_key}) - we recommend using
+the former option.
 }
 
 \section{High vs. Low level package APIs}{
@@ -33,30 +26,31 @@ environment variable (\code{IUCN_REDLIST_KEY}) or an R option
 \strong{High level API}
 High level functions do the HTTP request and parse data to a data.frame for
 ease of downstream use. The high level functions have no underscore on
-the end of the function name, e.g., \code{\link[=rl_search]{rl_search()}}
+the end of the function name, e.g., \code{\link[=rl_species]{rl_species()}}.
 
 \strong{Low level API}
 The parsing to data.frame in the high level API does take extra time.
 The low level API only does the HTTP request, and gives back JSON without
 doing any more parsing. The low level functions DO have an underscore on
-the end of the function name, e.g., \code{\link[=rl_search_]{rl_search_()}}
+the end of the function name, e.g., \code{\link[=rl_species_]{rl_species_()}}.
 }
 
 \section{No Spatial}{
 
 This package does not include support for the spatial API, described at
-https://apiv3.iucnredlist.org/spatial
+\url{https://apiv3.iucnredlist.org/spatial}.
 }
 
-\section{Citing the Red List API}{
+\section{Citing the IUCN Red List API}{
 
 Get the proper citation for the version of the Red List you are using
-by programatically running \code{\link[=rl_citation]{rl_citation()}}
+by programatically running \code{\link[=rl_citation]{rl_citation()}}. Also see
+\url{https://api.iucnredlist.org/}.
 }
 
 \section{Red List API Terms of Use}{
 
-See https://www.iucnredlist.org/terms/terms-of-use
+See \url{https://www.iucnredlist.org/terms/terms-of-use}.
 }
 
 \section{Rate limiting}{
@@ -68,9 +62,31 @@ They suggest a 2-second delay between your calls if you plan to make a
 lot of calls.
 }
 
-\section{Citing the IUCN Red List API}{
-
-See https://apiv3.iucnredlist.org/about
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://docs.ropensci.org/rredlist/}
+  \item \url{https://github.com/ropensci/rredlist}
+  \item Report bugs at \url{https://github.com/ropensci/rredlist/issues}
 }
 
+}
+\author{
+\strong{Maintainer}: William Gearty \email{willgearty@gmail.com}
+
+Authors:
+\itemize{
+  \item Scott Chamberlain \email{myrmecocystus@gmail.com}
+}
+
+Other contributors:
+\itemize{
+  \item rOpenSci (https://ropensci.org/) [funder]
+  \item Maëlle Salmon \email{maelle.salmon@yahoo.se} [contributor]
+  \item Kevin Cazelles \email{kevin.cazelles@insileco.io} (\href{https://orcid.org/0000-0001-6619-9874}{ORCID}) [reviewer]
+  \item Stephanie Hazlitt \email{stephhazlitt@gmail.com} [reviewer]
+}
+
+}
+\keyword{internal}
 \keyword{package}
