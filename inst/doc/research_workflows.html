@@ -12,7 +12,7 @@
 
 <meta name="author" content="William Gearty" />
 
-<meta name="date" content="2025-07-24" />
+<meta name="date" content="2025-09-03" />
 
 <title>Using rredlist within a research workflow</title>
 
@@ -341,7 +341,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">Using rredlist within a research
 workflow</h1>
 <h4 class="author">William Gearty</h4>
-<h4 class="date">2025-07-24</h4>
+<h4 class="date">2025-09-03</h4>
 
 
 
@@ -493,32 +493,24 @@ meant to search:</p>
 <p>Yep, that looks good! Now let’s inspect the format of the assessment
 summary:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">names</span>(au_assessments<span class="sc">$</span>assessments)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;year_published&quot;               &quot;latest&quot;                       &quot;possibly_extinct&quot;            </span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt;  [4] &quot;possibly_extinct_in_the_wild&quot; &quot;sis_taxon_id&quot;                 &quot;url&quot;                         </span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;taxon_scientific_name&quot;        &quot;red_list_category_code&quot;       &quot;assessment_id&quot;               </span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt; [10] &quot;code&quot;                         &quot;code_type&quot;                    &quot;scopes&quot;</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="fu">head</span>(au_assessments<span class="sc">$</span>assessments)</span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt;   year_published latest possibly_extinct possibly_extinct_in_the_wild sis_taxon_id</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt; 1           2020   TRUE            FALSE                        FALSE        10030</span></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; 2           2014   TRUE            FALSE                        FALSE        11150</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt; 3           2019   TRUE            FALSE                        FALSE        11200</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt; 4           2013   TRUE            FALSE                        FALSE       137084</span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt; 5           2013   TRUE            FALSE                        FALSE       137097</span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt; 6           2013   TRUE            FALSE                        FALSE       137119</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt;                                                 url taxon_scientific_name red_list_category_code</span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt; 1  https://www.iucnredlist.org/species/10030/495630     Hexanchus griseus                     NT</span></span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt; 2  https://www.iucnredlist.org/species/11150/500780  Lagocephalus gloveri                     DD</span></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt; 3  https://www.iucnredlist.org/species/11200/500969           Lamna nasus                     VU</span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="co">#&gt; 4 https://www.iucnredlist.org/species/137084/519692     Onthophagus manya                     LC</span></span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="co">#&gt; 5 https://www.iucnredlist.org/species/137097/519904   Coptodactyla lesnei                     LC</span></span>
-<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="co">#&gt; 6 https://www.iucnredlist.org/species/137119/520192  Onthophagus lamgalio                     DD</span></span>
-<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a><span class="co">#&gt;   assessment_id code code_type    scopes</span></span>
-<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a><span class="co">#&gt; 1        495630   AU   country Global, 1</span></span>
-<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a><span class="co">#&gt; 2        500780   AU   country Global, 1</span></span>
-<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a><span class="co">#&gt; 3        500969   AU   country Global, 1</span></span>
-<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a><span class="co">#&gt; 4        519692   AU   country Global, 1</span></span>
-<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a><span class="co">#&gt; 5        519904   AU   country Global, 1</span></span>
-<span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a><span class="co">#&gt; 6        520192   AU   country Global, 1</span></span></code></pre></div>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;year_published&quot;               &quot;latest&quot;                       &quot;possibly_extinct&quot;             &quot;possibly_extinct_in_the_wild&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt;  [5] &quot;sis_taxon_id&quot;                 &quot;url&quot;                          &quot;taxon_scientific_name&quot;        &quot;red_list_category_code&quot;      </span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt;  [9] &quot;assessment_id&quot;                &quot;code&quot;                         &quot;code_type&quot;                    &quot;scopes&quot;</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="fu">head</span>(au_assessments<span class="sc">$</span>assessments)</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt;   year_published latest possibly_extinct possibly_extinct_in_the_wild sis_taxon_id                                               url</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; 1           2020   TRUE            FALSE                        FALSE        10030  https://www.iucnredlist.org/species/10030/495630</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt; 2           2014   TRUE            FALSE                        FALSE        11150  https://www.iucnredlist.org/species/11150/500780</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; 3           2019   TRUE            FALSE                        FALSE        11200  https://www.iucnredlist.org/species/11200/500969</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt; 4           2013   TRUE            FALSE                        FALSE       137084 https://www.iucnredlist.org/species/137084/519692</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt; 5           2013   TRUE            FALSE                        FALSE       137097 https://www.iucnredlist.org/species/137097/519904</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt; 6           2013   TRUE            FALSE                        FALSE       137119 https://www.iucnredlist.org/species/137119/520192</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt;   taxon_scientific_name red_list_category_code assessment_id code code_type    scopes</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt; 1     Hexanchus griseus                     NT        495630   AU   country Global, 1</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt; 2  Lagocephalus gloveri                     DD        500780   AU   country Global, 1</span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt; 3           Lamna nasus                     VU        500969   AU   country Global, 1</span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt; 4     Onthophagus manya                     LC        519692   AU   country Global, 1</span></span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="co">#&gt; 5   Coptodactyla lesnei                     LC        519904   AU   country Global, 1</span></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="co">#&gt; 6  Onthophagus lamgalio                     DD        520192   AU   country Global, 1</span></span></code></pre></div>
 <p>We could go ahead and download the full assessments for all
 Australian species now, but downloading full assessments is the slowest
 part of the workflow, so let’s get an assessment summary for reptiles
@@ -536,17 +528,15 @@ these IDs, let’s first take a look at what that looks like for the first
 assessment. We do that using <code>rl_assessment()</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>assessment <span class="ot">&lt;-</span> <span class="fu">rl_assessment</span>(assessment_ids[<span class="dv">1</span>])</span>
 <span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">names</span>(assessment)</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;assessment_date&quot;              &quot;year_published&quot;               &quot;latest&quot;                      </span></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt;  [4] &quot;possibly_extinct&quot;             &quot;possibly_extinct_in_the_wild&quot; &quot;sis_taxon_id&quot;                </span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;criteria&quot;                     &quot;url&quot;                          &quot;citation&quot;                    </span></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt; [10] &quot;assessment_id&quot;                &quot;assessment_points&quot;            &quot;assessment_ranges&quot;           </span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt; [13] &quot;taxon&quot;                        &quot;population_trend&quot;             &quot;red_list_category&quot;           </span></span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; [16] &quot;supplementary_info&quot;           &quot;documentation&quot;                &quot;biogeographical_realms&quot;      </span></span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt; [19] &quot;conservation_actions&quot;         &quot;faos&quot;                         &quot;habitats&quot;                    </span></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt; [22] &quot;locations&quot;                    &quot;researches&quot;                   &quot;use_and_trade&quot;               </span></span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt; [25] &quot;threats&quot;                      &quot;credits&quot;                      &quot;errata&quot;                      </span></span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt; [28] &quot;references&quot;                   &quot;growth_forms&quot;                 &quot;lmes&quot;                        </span></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt; [31] &quot;scopes&quot;                       &quot;stresses&quot;                     &quot;systems&quot;</span></span></code></pre></div>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;assessment_date&quot;              &quot;year_published&quot;               &quot;latest&quot;                       &quot;possibly_extinct&quot;            </span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt;  [5] &quot;possibly_extinct_in_the_wild&quot; &quot;sis_taxon_id&quot;                 &quot;criteria&quot;                     &quot;url&quot;                         </span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt;  [9] &quot;citation&quot;                     &quot;assessment_id&quot;                &quot;assessment_points&quot;            &quot;assessment_ranges&quot;           </span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt; [13] &quot;taxon&quot;                        &quot;population_trend&quot;             &quot;red_list_category&quot;            &quot;supplementary_info&quot;          </span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt; [17] &quot;documentation&quot;                &quot;biogeographical_realms&quot;       &quot;conservation_actions&quot;         &quot;faos&quot;                        </span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; [21] &quot;habitats&quot;                     &quot;locations&quot;                    &quot;researches&quot;                   &quot;use_and_trade&quot;               </span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt; [25] &quot;threats&quot;                      &quot;credits&quot;                      &quot;errata&quot;                       &quot;references&quot;                  </span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt; [29] &quot;growth_forms&quot;                 &quot;lmes&quot;                         &quot;scopes&quot;                       &quot;stresses&quot;                    </span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt; [33] &quot;systems&quot;</span></span></code></pre></div>
 <p>Now you can see why downloading this information will take a while;
 that’s a lot of data! The information available from the IUCN API spans
 ecology, threats, references, and more!</p>
@@ -585,18 +575,12 @@ assessment record is also a list, with each element representing a
 different kind of data in the record (e.g., habitats, taxonomy). For
 this workflow, we only really care about the taxonomic and threat
 category data, so let’s extract those elements from each list item using
-<code>rl_assessment_extract()</code>. We need to extract each element
-separately, so we’ll merge the two sets of data together based on the
-<code>assessment_id</code> column. Note that the
+<code>rl_assessment_extract()</code>. Note that the
 <code>flatten = TRUE</code> option for
 <code>rl_assessment_extract()</code> requires the <code>dplyr</code>,
 <code>tibble</code>, and <code>tidyr</code> packages to be
 installed.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>assessment_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a> <span class="fu">rl_assessment_extract</span>(assessment_list, <span class="st">&quot;taxon&quot;</span>, <span class="at">format =</span> <span class="st">&quot;df&quot;</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a> <span class="fu">rl_assessment_extract</span>(assessment_list, <span class="st">&quot;red_list_category__code&quot;</span>, <span class="at">format =</span> <span class="st">&quot;df&quot;</span>),</span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a> <span class="at">by =</span> <span class="st">&quot;assessment_id&quot;</span></span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>assessment_df <span class="ot">&lt;-</span> <span class="fu">rl_assessment_extract</span>(assessment_list, <span class="fu">c</span>(<span class="st">&quot;taxon&quot;</span>, <span class="st">&quot;red_list_category__code&quot;</span>), <span class="at">format =</span> <span class="st">&quot;df&quot;</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>We’ll do some very minor data cleaning and filtering. In this case,
 some of the assessments use old threat codes, so we’ll exclude them from
 further analyses. We’ll also convert the category column to an ordered
@@ -717,31 +701,22 @@ compare these two groups. Let’s also introduce another type of data in
 assessments: <em>habitat</em>.</p>
 <p>We’ll start with the cycads and download a summary of their latest
 assessments. We’ll then download the full assessment records based on
-that summary. Finally, we’ll extract the entire <code>habitats</code>
-data.frame from each assessment record and merge that with the
-<code>taxon</code> element of each record. Note that for each
-assessment, there are one or more habitats assigned to the species.
+that summary. Finally, we’ll extract the <code>habitats</code> and
+<code>taxon</code> data.frame from each assessment record. Note that for
+each assessment, there are one or more habitats assigned to the species.
 There is also often habitat suitability data, although we’ll ignore that
 for today.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>cycad_assessments <span class="ot">&lt;-</span> <span class="fu">rl_comp_groups</span>(<span class="st">&quot;cycads&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>, <span class="at">latest =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>cycad_data <span class="ot">&lt;-</span> <span class="fu">rl_assessment_list</span>(cycad_assessments<span class="sc">$</span>assessments<span class="sc">$</span>assessment_id)</span>
 <span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>cycad_habitats <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
-<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>  <span class="fu">rl_assessment_extract</span>(cycad_data, <span class="st">&quot;habitats&quot;</span>, <span class="at">format =</span> <span class="st">&quot;df&quot;</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>  <span class="fu">rl_assessment_extract</span>(cycad_data, <span class="st">&quot;taxon&quot;</span>, <span class="at">format =</span> <span class="st">&quot;df&quot;</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">&quot;assessment_id&quot;</span></span>
-<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>cycad_habitats <span class="ot">&lt;-</span> <span class="fu">rl_assessment_extract</span>(cycad_data, <span class="fu">c</span>(<span class="st">&quot;taxon&quot;</span>, <span class="st">&quot;habitats&quot;</span>), <span class="at">format =</span> <span class="st">&quot;df&quot;</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Now we can do the same thing for conifers:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>conifer_assessments <span class="ot">&lt;-</span> <span class="fu">rl_comp_groups</span>(<span class="st">&quot;conifers&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>, <span class="at">latest =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>conifer_data <span class="ot">&lt;-</span> <span class="fu">rl_assessment_list</span>(conifer_assessments<span class="sc">$</span>assessments<span class="sc">$</span>assessment_id)</span>
 <span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>conifer_habitats <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>  <span class="fu">rl_assessment_extract</span>(conifer_data, <span class="st">&quot;habitats&quot;</span>, <span class="at">format =</span> <span class="st">&quot;df&quot;</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a>  <span class="fu">rl_assessment_extract</span>(conifer_data, <span class="st">&quot;taxon&quot;</span>, <span class="at">format =</span> <span class="st">&quot;df&quot;</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">&quot;assessment_id&quot;</span></span>
-<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>conifer_habitats <span class="ot">&lt;-</span> <span class="fu">rl_assessment_extract</span>(conifer_data, <span class="fu">c</span>(<span class="st">&quot;habitats&quot;</span>, <span class="st">&quot;taxon&quot;</span>), <span class="at">format =</span> <span class="st">&quot;df&quot;</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Now that we have habitat data for both clades, let’s combine them and
 clean up the data a bit. We can also use <code>rl_habitats()</code>
 without any arguments to get descriptions of the different habitats. For

@@ -12,7 +12,7 @@
 
 <meta name="author" content="William Gearty" />
 
-<meta name="date" content="2024-12-10" />
+<meta name="date" content="2025-09-02" />
 
 <title>rredlist benchmarks</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">rredlist benchmarks</h1>
 <h4 class="author">William Gearty</h4>
-<h4 class="date">2024-12-10</h4>
+<h4 class="date">2025-09-02</h4>
 
 
 
@@ -377,8 +377,8 @@ couple of use cases, in rough order of increasing complexity.</p>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>)</span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; Unit: milliseconds</span></span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt;            expr      min       lq     mean   median       uq      max neval cld</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt;   rl_sp_count() 112.1753 112.9675 116.0770 114.6603 119.2189 126.5307    10   a</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;  rl_sp_count_() 111.1262 112.3976 116.1929 115.4099 116.0395 127.9950    10   a</span></span></code></pre></div>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt;   rl_sp_count() 116.7317 119.2230 120.2650 119.9624 120.2204 127.7930    10   a</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;  rl_sp_count_() 116.9935 117.4514 142.3724 118.6451 120.1328 313.6149    10   a</span></span></code></pre></div>
 </div>
 <div id="lookup-individual-assessment" class="section level4">
 <h4>2. Lookup individual assessment</h4>
@@ -388,9 +388,9 @@ couple of use cases, in rough order of increasing complexity.</p>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="at">times =</span> <span class="dv">10</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>)</span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; Unit: milliseconds</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;                       expr      min       lq     mean   median       uq      max neval cld</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;   rl_assessment(136250858) 257.1335 266.4728 286.9152 277.9695 313.7179 322.6544    10   a</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  rl_assessment_(136250858) 252.2234 260.1433 311.6918 287.6650 323.1625 478.7026    10   a</span></span></code></pre></div>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;                       expr      min       lq     mean   median      uq      max neval cld</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;   rl_assessment(136250858) 240.1841 243.4012 250.3891 248.4046 255.671 265.0165    10   a</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  rl_assessment_(136250858) 239.4693 242.0733 260.7446 247.0122 249.948 388.4490    10   a</span></span></code></pre></div>
 </div>
 <div id="taxonomic-lookup-with-defaults" class="section level4">
 <h4>3. Taxonomic lookup with defaults</h4>
@@ -401,8 +401,8 @@ couple of use cases, in rough order of increasing complexity.</p>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>)</span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; Unit: milliseconds</span></span>
 <span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;          expr      min       lq     mean   median       uq      max neval cld</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;   rl_family() 118.1405 119.3698 123.6975 120.1616 123.0535 144.8783    10   a</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;  rl_family_() 116.6910 118.6265 156.5042 119.3431 132.2629 428.2468    10   a</span></span></code></pre></div>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;   rl_family() 126.6563 126.9070 131.7954 127.7793 128.5488 158.2391    10   a</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;  rl_family_() 126.2004 129.5163 132.9154 131.4624 136.4402 141.6659    10   a</span></span></code></pre></div>
 </div>
 <div id="taxonomic-lookup-with-query-one-page-of-results" class="section level4">
 <h4>4. Taxonomic lookup with query (one page of results)</h4>
@@ -413,8 +413,8 @@ couple of use cases, in rough order of increasing complexity.</p>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>)</span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; Unit: milliseconds</span></span>
 <span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt;                   expr      min       lq     mean   median       uq      max neval cld</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt;   rl_family(&quot;Rheidae&quot;) 616.2717 617.7706 626.2586 621.4997 637.6830 647.0362    10   a</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;  rl_family_(&quot;Rheidae&quot;) 610.7493 618.8672 633.7496 627.0082 650.9436 677.3837    10   a</span></span></code></pre></div>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt;   rl_family(&quot;Rheidae&quot;) 614.5653 628.8536 672.6828 669.7144 712.9704 739.9620    10   a</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;  rl_family_(&quot;Rheidae&quot;) 606.4974 642.0678 693.4926 676.5411 756.3828 822.1573    10   a</span></span></code></pre></div>
 </div>
 <div id="taxonomic-lookup-with-query-10-pages-of-results" class="section level4">
 <h4>5. Taxonomic lookup with query (~10 pages of results)</h4>
@@ -424,9 +424,9 @@ couple of use cases, in rough order of increasing complexity.</p>
 <span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="at">times =</span> <span class="dv">10</span></span>
 <span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>)</span>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; Unit: seconds</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt;                                  expr      min       lq      mean    median       uq      max neval cld</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt;   rl_family(&quot;Corvidae&quot;, quiet = TRUE) 9.913948 9.984358 10.109995 10.153347 10.17414 10.23669    10  a </span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;  rl_family_(&quot;Corvidae&quot;, quiet = TRUE) 9.866713 9.895834  9.985805  9.986027 10.06351 10.07924    10   b</span></span></code></pre></div>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt;                                  expr      min       lq     mean   median       uq      max neval cld</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt;   rl_family(&quot;Corvidae&quot;, quiet = TRUE) 10.89607 11.02283 11.18194 11.17454 11.32452 11.48761    10   a</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;  rl_family_(&quot;Corvidae&quot;, quiet = TRUE) 10.83396 10.92033 11.09111 11.04066 11.16850 11.63398    10   a</span></span></code></pre></div>
 </div>
 <div id="taxonomic-lookup-with-query-40-pages-of-results" class="section level4">
 <h4>6. Taxonomic lookup with query (~40 pages of results)</h4>
@@ -437,8 +437,8 @@ couple of use cases, in rough order of increasing complexity.</p>
 <span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>)</span>
 <span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; Unit: seconds</span></span>
 <span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;                                    expr      min       lq     mean   median       uq      max neval cld</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt;   rl_family(&quot;Tyrannidae&quot;, quiet = TRUE) 35.19196 35.23844 35.50863 35.28687 35.38780 37.11036    10  a </span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt;  rl_family_(&quot;Tyrannidae&quot;, quiet = TRUE) 34.76442 34.91699 35.00961 35.02371 35.08263 35.22149    10   b</span></span></code></pre></div>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt;   rl_family(&quot;Tyrannidae&quot;, quiet = TRUE) 38.17690 38.26825 38.75878 38.58874 38.93320 39.98190    10   a</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt;  rl_family_(&quot;Tyrannidae&quot;, quiet = TRUE) 37.74677 37.93254 38.28780 38.00963 38.72292 39.07203    10   a</span></span></code></pre></div>
 </div>
 <div id="taxonomic-lookup-with-query-900-pages-of-results" class="section level4">
 <h4>7. Taxonomic lookup with query (~900 pages of results)</h4>
@@ -449,8 +449,8 @@ couple of use cases, in rough order of increasing complexity.</p>
 <span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>)</span>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; Unit: seconds</span></span>
 <span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt;                             expr      min       lq     mean   median       uq      max neval cld</span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt;   rl_class(&quot;Aves&quot;, quiet = TRUE) 1137.053 1138.816 1142.828 1140.627 1145.490 1157.649    10  a </span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt;  rl_class_(&quot;Aves&quot;, quiet = TRUE) 1127.992 1131.732 1132.963 1133.211 1135.561 1136.631    10   b</span></span></code></pre></div>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt;   rl_class(&quot;Aves&quot;, quiet = TRUE) 1424.662 1451.755 1467.593 1468.110 1483.732 1513.186    10   a</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt;  rl_class_(&quot;Aves&quot;, quiet = TRUE) 1428.810 1435.013 1448.085 1444.788 1465.589 1472.253    10   a</span></span></code></pre></div>
 </div>
 <div id="and-the-winner-is" class="section level3">
 <h3>And the winner is…</h3>
@@ -479,16 +479,11 @@ single page of assessments using some of the internal functions of
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="at">times =</span> <span class="dv">10</span></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>)</span>
 <span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#&gt; Unit: microseconds</span></span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">#&gt;                                                 expr        min         lq        mean      median</span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt;  res &lt;- rredlist:::rr_GET_raw(&quot;taxa/family/Rheidae&quot;) 612396.800 616270.001 629656.6911 618445.5010</span></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt;                              x &lt;- res$parse(&quot;UTF-8&quot;)    770.001    875.801   1043.2110    898.9515</span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt;                 rredlist:::rl_parse(x, parse = TRUE)   1030.701   1110.602   1604.1812   1256.4015</span></span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt;                rredlist:::rl_parse(x, parse = FALSE)     59.501     62.102     81.9312     85.3010</span></span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="co">#&gt;          uq        max neval cld</span></span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="co">#&gt;  644299.401 658205.701    10  a </span></span>
-<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="co">#&gt;     930.101   2283.101    10   b</span></span>
-<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="co">#&gt;    2094.601   2946.201    10   b</span></span>
-<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="co">#&gt;      94.601    113.401    10   b</span></span></code></pre></div>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">#&gt;                                                 expr      min       lq      mean    median       uq      max neval cld</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt;  res &lt;- rredlist:::rr_GET_raw(&quot;taxa/family/Rheidae&quot;) 588296.5 595734.3 607564.29 603497.10 620369.4 634292.7    10  a </span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt;                              x &lt;- res$parse(&quot;UTF-8&quot;)    807.9    829.0   1971.02   1028.45   2543.7   7116.8    10   b</span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt;                 rredlist:::rl_parse(x, parse = TRUE)   1021.6   1159.5   1440.46   1212.80   1302.7   3237.3    10   b</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt;                rredlist:::rl_parse(x, parse = FALSE)     76.4     97.2    167.72    114.65    292.4    317.2    10   b</span></span></code></pre></div>
 <p>The above benchmarking shows us that the vast majority of time is
 spent downloading data from the IUCN API. For a single page of results,
 even the highest level of parsing takes only 0.15% of the time it takes
@@ -506,14 +501,14 @@ very quick compared to the process of downloading the data.</p>
 <span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  <span class="at">times =</span> <span class="dv">10</span></span>
 <span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>)</span>
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; Unit: milliseconds</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt;                                                                                                               expr</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt;  lst &lt;- rredlist:::page_assessments(&quot;taxa/family/Tyrannidae&quot;,      key = rredlist:::check_key(NULL), quiet = TRUE)</span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt;                                                                  rredlist:::combine_assessments(lst, parse = TRUE)</span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt;                                                                 rredlist:::combine_assessments(lst, parse = FALSE)</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt;         min         lq        mean     median         uq        max neval cld</span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt;  34726.9180 35026.3228 35239.94843 35172.9793 35400.4013 35931.0798    10 a  </span></span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt;    238.9440   243.5736   249.50199   248.0357   253.9973   263.0525    10  b </span></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt;     12.4059    12.8977    15.36693    13.4167    14.0818    27.1965    10   c</span></span></code></pre></div>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt;                                                                                                               expr        min         lq</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt;  lst &lt;- rredlist:::page_assessments(&quot;taxa/family/Tyrannidae&quot;,      key = rredlist:::check_key(NULL), quiet = TRUE) 36737.2111 36941.2153</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt;                                                                  rredlist:::combine_assessments(lst, parse = TRUE)   249.1083   266.0197</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt;                                                                 rredlist:::combine_assessments(lst, parse = FALSE)    13.7986    15.4881</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt;         mean      median         uq        max neval cld</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt;  37558.35359 37456.89045 38066.7995 39157.4033    10  a </span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt;    272.17091   271.24645   279.7633   291.9884    10   b</span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt;     16.63622    15.62825    16.6812    23.0368    10   b</span></span></code></pre></div>
 <p>Again, even with about 40 pages of data to parse, the download takes
 the vast majority of the time. The highest-level parsing has increased
 to about 1% of the time it takes to download the data, but this remains
@@ -525,7 +520,7 @@ less than a second compared to the ~35 second download.</p>
 majority of time is spent downloading the data from the IUCN database
 and reading it into R. For larger downloads, the parsing done by the
 high-level API may take an appreciable amount of time (tenths of seconds
-to seconds), It’s possible that users who are calling these functions
+to seconds). It’s possible that users who are calling these functions
 many (e.g., thousands) of times would appreciate this time reduction.
 However, for most users it probably won’t matter. Furthermore, keep in
 mind that if you use the low-level API you will likely need to do your
